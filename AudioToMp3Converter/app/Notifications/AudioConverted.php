@@ -16,9 +16,11 @@ class AudioConverted extends Notification
      *
      * @return void
      */
-    public function __construct()
+    private $input_file
+        
+    public function __construct($input_file)
     {
-        //
+        $this->input_file = $input_file;
     }
 
     /**
@@ -41,8 +43,9 @@ class AudioConverted extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
+                    ->line('Following audio converted successfully.')
+                    ->line($this->input_file)
+                    ->action('Download', route('download'))
                     ->line('Thank you for using our application!');
     }
 
