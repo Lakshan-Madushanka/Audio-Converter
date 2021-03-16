@@ -17,12 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/music', ['App\Http\Controllers\UserController', 'index']);
-
-Route::get('/get', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
