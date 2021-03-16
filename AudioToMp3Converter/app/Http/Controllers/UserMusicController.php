@@ -18,9 +18,9 @@ class UserMusicController extends ApiController
 
     public function __construct()
     {
-       // $this->middleware('auth:api');
-        //$this->middleware('verify');
-        //$this->middleware('can:verifyUser,user');
+        $this->middleware('auth:api');
+        $this->middleware('verify');
+        $this->middleware('can:verifyUser,user');
 
     }
 
@@ -65,7 +65,6 @@ class UserMusicController extends ApiController
                 'user_id' => $user->id
 
             ]);
-            //return $this->showOne($music, 'Music uploaded successfully', 201);
 
         });
 
