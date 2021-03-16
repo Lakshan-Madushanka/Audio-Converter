@@ -75,7 +75,7 @@ trait CloudConverter
                    'output_format' => $outputFormat
                ]);
            // Converte success massage send to user
-           $user->notify(new AudioConverted($inputFile));
+           $user->notify(new AudioConverted($inputFile->input_file));
            // Delete Converted input file if converted
            File::delete($inputPath);
            $status = 'success';
