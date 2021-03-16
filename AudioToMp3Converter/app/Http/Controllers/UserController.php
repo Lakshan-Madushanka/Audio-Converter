@@ -21,7 +21,6 @@ class UserController extends ApiController
      */
     public function index()
     {
-        Notification::route('mail', 'epmadushanka@gmail.com')->notify(new EmailVerification());
 
     }
 
