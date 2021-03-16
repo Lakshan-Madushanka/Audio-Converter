@@ -26,7 +26,8 @@ Route::group(['prefix' => 'users'], function () {
 
 });
 
+//user music routes
 Route::apiResource('users.music', \App\Http\Controllers\UserMusicController::class, ['only' => 'store']);
 Route::post('users/{user}/convert', [\App\Http\Controllers\UserMusicController::class, 'convert']);
-Route::get('users/{user}/download', [\App\Http\Controllers\UserMusicController::class, 'download']);
+Route::get('users/{user}/download', [\App\Http\Controllers\UserMusicController::class, 'download'])->name('download');
 Route::get('users/{user}/history', [\App\Http\Controllers\UserMusicController::class, 'history']);
